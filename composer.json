@@ -1,0 +1,25 @@
+{
+    "name": "webmil/filepickerio-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony WebmilFilepickerIoBundle",
+    "keywords": ["File management"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexander Lavasov",
+            "email": "imsashko@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": ">=2.1,<2.3-dev"
+    },
+    "require-dev": {
+        "twig/twig": "*"
+    },
+    "autoload": {
+        "psr-0": { "Webmil\\FilepickerIoBundle": "" }
+    },
+    "target-dir": "Webmil/FilepickerIoBundle"
+}
