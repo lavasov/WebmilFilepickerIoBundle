@@ -8,21 +8,21 @@ class FilepickerIoHelperTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
-	* @covers Webmil\FilepickerIoBundle\Templating\Helper\FilepickerIoHelper::getName
-	*/
-	public function testGetName()
-	{
+    * @covers Webmil\FilepickerIoBundle\Templating\Helper\FilepickerIoHelper::getName
+    */
+    public function testGetName()
+    {
         $templating = $this->getMock('Symfony\Component\Templating\EngineInterface');
         $helper = new FilepickerIoHelper($templating, 'foo');
-		$this->assertSame('filepickerIo', $helper->getName());
-	}
+        $this->assertSame('filepickerIo', $helper->getName());
+    }
 
 
     /**
-	* @covers Webmil\FilepickerIoBundle\Templating\Helper\FilepickerIoHelper::initialize
-	*/
-	public function testInitialize()
-	{
+    * @covers Webmil\FilepickerIoBundle\Templating\Helper\FilepickerIoHelper::initialize
+    */
+    public function testInitialize()
+    {
         $renderedTemplate = new \stdClass();
         $templating = $this->getMock('Symfony\Component\Templating\EngineInterface');
         $templating
@@ -33,5 +33,23 @@ class FilepickerIoHelperTest extends \PHPUnit_Framework_TestCase
         $helper = new FilepickerIoHelper($templating, 'foo');
 
         $this->assertSame($renderedTemplate, $helper->initialize());
-	}
+    }
+
+    /**
+     * @covers Webmil\FilepickerIoBundle\Templating\Helper\FilepickerIoHelper::testSaveButton
+     */
+    public function testSaveButton()
+    {
+        $renderedTemplate = new \stdClass();
+        $templating = $this->getMock('Symfony\Component\Templating\EngineInterface');
+        $templating
+            ->expects($this->once())
+            ->method('render')
+            ->with('WebmilFilepickerIoBundle::save_button.html.twig')
+            ->will($this->returnValue($renderedTemplate));
+        $helper = new FilepickerIoHelper($templating, 'foo');
+
+        $this->assertSame($renderedTemplate, $helper->saveButton());
+    }
+
 }

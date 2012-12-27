@@ -1,0 +1,4 @@
+{% block filepicker_widget %}
+    {% set type = type|default('filepicker') %}
+    {{ block('field_widget') }}
+{% endblock %}

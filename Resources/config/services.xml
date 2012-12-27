@@ -7,6 +7,7 @@
     <parameters>
         <parameter key="webmil_filepicker_io.class">Webmil\FilepickerIoBundle\Twig\WebmilFilepickerIoExtension</parameter>
         <parameter key="webmil_filepicker_io.helper.class">Webmil\FilepickerIoBundle\Templating\Helper\FilepickerIoHelper</parameter>
+        <parameter key="webmil_filepicker_io.form.type.filepicker.class">Webmil\FilepickerIoBundle\Form\Type\FilepickerType</parameter>
     </parameters>
 
     <services>
@@ -21,6 +22,9 @@
             <tag name="templating.helper" alias="filepicker_io" />
         </service>
 
+        <service id="webmil_filepicker_io.form.type.filepicker" class="%webmil_filepicker_io.form.type.filepicker.class%">
+            <tag name="form.type" alias="filepicker" />
+        </service>
 
     </services>
 

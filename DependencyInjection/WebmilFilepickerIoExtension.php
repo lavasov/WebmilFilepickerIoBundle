@@ -25,6 +25,11 @@ class WebmilFilepickerIoExtension extends Extension
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
 
+        $container->setParameter('twig.form.resources', array_merge(
+            (array)$container->getParameter('twig.form.resources'),
+            array('WebmilFilepickerIoBundle:Form:fields.html.twig')
+        ));
+
         foreach ($config as $key => $value) {
             $container->setParameter('webmil_filepicker_io.' . $key, $value);
         }
