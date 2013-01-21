@@ -42,7 +42,7 @@ class FilepickerType extends AbstractType
     /**
     * {@inheritdoc}
     */
-    public function getParent()
+    public function getParent(array $options)
     {
         return 'text';
     }
