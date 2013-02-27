@@ -94,7 +94,7 @@ $form = $this->createFormBuilder()
 ### Displaying an image:
 
 ```jinja
-{{filepicker_io_image_tag('https://www.filepicker.io/api/file/hFHUCB3iTxyMzseuWOgG', {'w': '200'}, {'class': 'classname'})}}
+{{ filepicker_io_image_tag('https://www.filepicker.io/api/file/hFHUCB3iTxyMzseuWOgG', {'w': '200'}, {'class': 'classname'})}}
 ```
 See [the filepicker.io documentation](https://developers.filepicker.io/docs/web/#fpurl-images) for the full options list.
 
