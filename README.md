@@ -26,7 +26,7 @@ install`:
 ### Step 2) Register the namespaces
 
 If you installed the bundle by composer, use the created autoload.php  (jump to step 3).
-Add the following two namespace entries to the `registerNamespaces` call
+Add the following namespace entry to the `registerNamespaces` call
 in your autoloader:
 
 ```php
@@ -58,9 +58,6 @@ public function registerBundles()
 ```
 
 ### Step 4) Configure the bundle
-
-The bundle comes with a sensible default configuration, which is listed below.
-If you skip this step, these defaults will be used.
 
 ```yaml
 # app/config/config.yml
@@ -94,7 +91,7 @@ $form = $this->createFormBuilder()
 ### Displaying an image:
 
 ```jinja
-{{ filepicker_io_image_tag('https://www.filepicker.io/api/file/hFHUCB3iTxyMzseuWOgG', {'w': '200'}, {'class': 'classname'})}}
+{{ filepicker_io_image_tag('https://www.filepicker.io/api/file/hFHUCB3iTxyMzseuWOgG', {'w': '200'}, {'class': 'classname'}) }}
 ```
 See [the filepicker.io documentation](https://developers.filepicker.io/docs/web/#fpurl-images) for the full options list.
 
