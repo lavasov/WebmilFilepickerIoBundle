@@ -68,37 +68,38 @@ webmil_filepicker_io:
 
 ## Usage
 ### Initializing in twig template:
-    ```jinja
-        {{ filepicker_io_initialize() }}
-    ```
+
+```jinja
+    {{ filepicker_io_initialize() }}
+```
+
 ### Adding an upload field to your form:
 
-    Set **type** to 'filepicker' in form builder. To enable drag&drop set 'dragdrop' => true.
-    See [the filepicker.io documentation](https://developers.filepicker.io/docs/web/#widgets-pick) for the full options list.
+Set **type** to 'filepicker' in form builder. To enable drag&drop set 'dragdrop' => true.
+See [the filepicker.io documentation](https://developers.filepicker.io/docs/web/#widgets-pick) for the full options list.
 
-    ```php
-        $form = $this->createFormBuilder()
-            ->add('text', 'text')
-            ->add('filepicker', 'filepicker', array(
-                'dragdrop' => true,
-                'attr' => array(
-                    'data-fp-mimetype' => 'image/png'
-                    )
-                ))
-            ->getForm();
-    ```
+```php
+    $form = $this->createFormBuilder()
+        ->add('filepicker', 'filepicker', array(
+            'dragdrop' => true,
+            'attr' => array(
+                'data-fp-mimetype' => 'image/png'
+                )
+            ))
+        ->getForm();
+```
 
 ### Displaying an image:
 
-    ```jinja
-         {{filepicker_io_image_tag('https://www.filepicker.io/api/file/hFHUCB3iTxyMzseuWOgG', {'w': '200'}, {'class': 'classname'})}}
-    ```
-    See [the filepicker.io documentation](https://developers.filepicker.io/docs/web/#fpurl-images) for the full options list.
+```jinja
+     {{filepicker_io_image_tag('https://www.filepicker.io/api/file/hFHUCB3iTxyMzseuWOgG', {'w': '200'}, {'class': 'classname'})}}
+```
+See [the filepicker.io documentation](https://developers.filepicker.io/docs/web/#fpurl-images) for the full options list.
 
 
 ### Allowing the user to download a file (or upload it to any of the supported services)
 
-    ```jinja
-    {{ filepicker_io_save_button('http://path/to/file.png', 'Download file', 'image/png', {'data-fp-suggestedFilename': 'name.png'}) }}
-    ```
-    See [the filepicker.io documentation](https://developers.filepicker.io/docs/web/#widgets-export) for the full options list.
+```jinja
+{{ filepicker_io_save_button('http://path/to/file.png', 'Download file', 'image/png', {'data-fp-suggestedFilename': 'name.png'}) }}
+```
+See [the filepicker.io documentation](https://developers.filepicker.io/docs/web/#widgets-export) for the full options list.
