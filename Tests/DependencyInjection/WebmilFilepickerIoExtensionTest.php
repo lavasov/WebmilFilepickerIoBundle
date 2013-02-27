@@ -4,6 +4,9 @@ namespace Webmil\FilepickerIoBundle\Test\DependencyInjection;
 
 use Webmil\FilepickerIoBundle\DependencyInjection\WebmilFilepickerIoExtension;
 
+/**
+ * @author Oleksandr Lavasov <imsashko@gmail.com>
+ */
 class WebmilFilepickerIoExtensionTest extends \PHPUnit_Framework_TestCase
 {
     /**

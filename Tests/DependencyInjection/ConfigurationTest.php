@@ -2,9 +2,11 @@
 
 namespace Webmil\FilepickerIoBundle\Tests\DependencyInjection;
 
-use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Webmil\FilepickerIoBundle\DependencyInjection\Configuration;
 
+/**
+ * @author Oleksandr Lavasov <imsashko@gmail.com>
+ */
 class ConfigurationTest extends \PHPUnit_Framework_TestCase
 {
     public function testThatCanGetConfigTreeBuilder()

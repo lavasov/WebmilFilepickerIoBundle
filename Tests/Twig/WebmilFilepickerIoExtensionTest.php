@@ -3,9 +3,11 @@ namespace Webmil\FilepickerIoBundle\Test\Twig;
 
 use Webmil\FilepickerIoBundle\Twig\WebmilFilepickerIoExtension;
 
+/**
+ * @author Oleksandr Lavasov <imsashko@gmail.com>
+ */
 class WebmilFilepickerIoExtensionTest extends \PHPUnit_Framework_TestCase
 {
-
     /**
     * @covers Webmil\FilepickerIoBundle\Twig\WebmilFilepickerIoExtension::getName
     */
@@ -57,24 +59,46 @@ class WebmilFilepickerIoExtensionTest extends \PHPUnit_Framework_TestCase
      */
     public function testFilepickerIoSaveButton()
     {
-        // $renderedTemplate = 'foo';
-        // $helperMock = $this->getMockBuilder('Webmil\FilepickerIoBundle\Templating\Helper\FilepickerIoHelper')
-        //     ->disableOriginalConstructor()
-        //     ->getMock();
-        // $helperMock->expects($this->once())
-        //     ->method('saveButton')
-        //     ->will($this->returnValue($renderedTemplate));
+        $renderedTemplate = 'foo';
+        $helperMock = $this->getMockBuilder('Webmil\FilepickerIoBundle\Templating\Helper\FilepickerIoHelper')
+            ->disableOriginalConstructor()
+            ->getMock();
+        $helperMock->expects($this->once())
+            ->method('saveButton')
+            ->will($this->returnValue($renderedTemplate));
 
-        // $containerMock = $this->getMock('Symfony\Component\DependencyInjection\ContainerInterface');
-        // $containerMock->expects($this->once())
-        //     ->method('get')
-        //     ->with('webmil_filepicker_io.helper')
-        //     ->will($this->returnValue($helperMock));
+        $containerMock = $this->getMock('Symfony\Component\DependencyInjection\ContainerInterface');
+        $containerMock->expects($this->once())
+            ->method('get')
+            ->with('webmil_filepicker_io.helper')
+            ->will($this->returnValue($helperMock));
 
-        // $extension = new WebmilFilepickerIoExtension($containerMock);
+        $extension = new WebmilFilepickerIoExtension($containerMock);
 
-        // $this->assertSame($renderedTemplate, $extension->filepickerIoSaveButton());
+        $this->assertSame($renderedTemplate, $extension->filepickerIoSaveButton('test'));
     }
 
+    /**
+     * @covers Webmil\FilepickerIoBundle\Twig\WebmilFilepickerIoExtension::filepickerImageTag
+     */
+    public function testFilepickerImageTag()
+    {
+        $renderedTemplate = 'foo';
+        $helperMock = $this->getMockBuilder('Webmil\FilepickerIoBundle\Templating\Helper\FilepickerIoHelper')
+            ->disableOriginalConstructor()
+            ->getMock();
+        $helperMock->expects($this->once())
+            ->method('imageTag')
+            ->will($this->returnValue($renderedTemplate));
 
+        $containerMock = $this->getMock('Symfony\Component\DependencyInjection\ContainerInterface');
+        $containerMock->expects($this->once())
+            ->method('get')
+            ->with('webmil_filepicker_io.helper')
+            ->will($this->returnValue($helperMock));
+
+        $extension = new WebmilFilepickerIoExtension($containerMock);
+
+        $this->assertSame($renderedTemplate, $extension->filepickerImageTag('test'));
+    }
 }
