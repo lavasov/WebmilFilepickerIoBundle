@@ -19,6 +19,8 @@ install`:
 ```
 [WebmilFilepickerIoBundle]
     git=https://github.com/imsashko/WebmilFilepickerIoBundle.git
+    target=bundles/Webmil/FilepickerIoBundle
+    version=origin/2.0
 ```
 
 ### Step 2) Register the namespaces
@@ -70,7 +72,7 @@ webmil_filepicker_io:
 ### Initializing in twig template:
 
 ```jinja
-    {{ filepicker_io_initialize() }}
+{{ filepicker_io_initialize() }}
 ```
 
 ### Adding an upload field to your form:
@@ -79,20 +81,20 @@ Set **type** to 'filepicker' in form builder. To enable drag&drop set 'dragdrop'
 See [the filepicker.io documentation](https://developers.filepicker.io/docs/web/#widgets-pick) for the full options list.
 
 ```php
-    $form = $this->createFormBuilder()
-        ->add('filepicker', 'filepicker', array(
-            'dragdrop' => true,
-            'attr' => array(
-                'data-fp-mimetype' => 'image/png'
-                )
-            ))
-        ->getForm();
+$form = $this->createFormBuilder()
+    ->add('filepicker', 'filepicker', array(
+        'dragdrop' => true,
+        'attr' => array(
+            'data-fp-mimetype' => 'image/png'
+            )
+        ))
+    ->getForm();
 ```
 
 ### Displaying an image:
 
 ```jinja
-     {{filepicker_io_image_tag('https://www.filepicker.io/api/file/hFHUCB3iTxyMzseuWOgG', {'w': '200'}, {'class': 'classname'})}}
+{{filepicker_io_image_tag('https://www.filepicker.io/api/file/hFHUCB3iTxyMzseuWOgG', {'w': '200'}, {'class': 'classname'})}}
 ```
 See [the filepicker.io documentation](https://developers.filepicker.io/docs/web/#fpurl-images) for the full options list.
 
