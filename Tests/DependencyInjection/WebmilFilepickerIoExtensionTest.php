@@ -10,8 +10,8 @@ use Webmil\FilepickerIoBundle\DependencyInjection\WebmilFilepickerIoExtension;
 class WebmilFilepickerIoExtensionTest extends \PHPUnit_Framework_TestCase
 {
     /**
-	* @covers Webmil\FilepickerIoBundle\DependencyInjection\WebmilFilepickerIoExtension::load
-	*/
+    * @covers Webmil\FilepickerIoBundle\DependencyInjection\WebmilFilepickerIoExtension::load
+    */
     public function testLoadFailure()
     {
         $container = $this->getMockBuilder('Symfony\\Component\\DependencyInjection\\ContainerBuilder')
@@ -24,9 +24,9 @@ class WebmilFilepickerIoExtensionTest extends \PHPUnit_Framework_TestCase
         $extension->load(array(array()), $container);
     }
 
-	/**
-	* @covers Webmil\FilepickerIoBundle\DependencyInjection\WebmilFilepickerIoExtension::load
-	*/
+    /**
+    * @covers Webmil\FilepickerIoBundle\DependencyInjection\WebmilFilepickerIoExtension::load
+    */
     public function testLoadSetParameters()
     {
         $container = $this->getMockBuilder('Symfony\\Component\\DependencyInjection\\ContainerBuilder')
